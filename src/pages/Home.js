@@ -2,6 +2,7 @@ import React from 'react'
 import {PageWrapper} from '../styledComponents.js';
 import { motion } from "framer-motion"
 
+
 const PageVariant = {
     start: {opacity: 0},
     stop: {
@@ -12,63 +13,108 @@ const PageVariant = {
 }
 }
 
-const PageTitle  = {
-  start: {x: -400},
-    stop: {
-      x: 0,
-    transition: {
-     type: 'spring', duration: 1
-    }
+
+
+const RUBRIK = {
+  start: {Y: 100},
+  stop: {
+    X: 1000,
+  transition: {
+   duration: 2
+  }
 }
 }
 
-const TextVariant = {
-  start: {x: -400},
+const TextLink = {
+  start: {y: -620},
   stop: {
-    x: 0,
+    x: -400,
   transition: {
    type: 'spring', duration: 1
     }
 }
 }
 
+
+const TextKompetens ={
+  start: {y: -120},
+  stop: {
+    x: 0,
+    transition: {
+      type: 'spring', duration: 1
+    }
+  }
+}
+
 function Home() {
-  return (
+  return  (
     <PageWrapper
     as={motion.div}
     initial="start"
   animate="stop"
   variants={PageVariant}
+  
+    > 
     
-    >
-        <motion.h1
+
+
+        <motion.h2
         
-        variants={PageTitle}
+        variants={RUBRIK}
         >
-          Home
-          </motion.h1>
+          MATTIAS BOUVIN <br />
+         Västra Frölunda 421 47, Göteborg
+          
+
+          </motion.h2>
 
           <motion.p
-            variants={TextVariant}
-          >Text1</motion.p>
+            variants={TextKompetens}
+          > 
+          <img src="images/mattias.jpg"width="130" height="130"></img><br/>
+            <b>Kontakt</b> <br/>072-535 59 76 <br/>
+          bouvinmattias@hotmail.com  <br/> 
+          <b>Körkort-B körkort</b> <br/>
+          <b>Språkkunskaper</b><br/>
+          Svenska, Engelska <br/>
+          <b>Referenser</b><br/>
+          <li>Sibar Al-ani
+          (Lärare i webbutveckling)</li>
+          Kontakt – sibar.al-ani@changemakereducations.se <br/>
 
-          <motion.p
-          variants={TextVariant}
-          >Text2</motion.p>
+         <li> Krister Widell (Utbildningsledare Changemaker Educations)</li>
+          Kontakt – 0705764192
+          Krister.widell@changemakereducations.se <br/>
+          <b>Kompetenser (IT)</b><br/>
+         HTML<br/>
+        CSS (GRID,FLEXBOX) <br/>
+        JAVASCRIPT (REACT)<br/>
+        PHP<br/>
+        MYSQL<br/>
+        GITHUB<br/>
+        SCRUM <br/>
+        FIGMA <br/>
+        <b>Kompetenser (Allmänt)</b><br/>
+          Ansvarsfull<br/>
+          Samarbetsvillig  <br/>
+          Noggrann<br/>
+          Lättlärd
 
-          <motion.p
-          variants={TextVariant}
-          >Text3</motion.p>
+          </motion.p>
 
+          
           <motion.p
-          variants={TextVariant}
-          >Text4</motion.p>
+          variants={TextLink}
+          >
+          <button><a href="https://www.linkedin.com/in/mattias-bouvin-940094131">Linkedin profil</a></button>
+            -
+           <button><a href='https://github.com/Mattias11Bouvin'> Github profil</a></button>
+          </motion.p>
 
-          <motion.p
-          variants={TextVariant}
-          >Text5</motion.p>
+          
 
         </PageWrapper>
+        
   )
 }
 

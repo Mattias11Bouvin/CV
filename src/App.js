@@ -2,14 +2,17 @@ import logo from './logo.svg';
 import './App.css';
 import styled from 'styled-components';
 import Home from './pages/Home';
-import Puns from './pages/Puns';
-import Pun from './pages/Pun';
+
 import {
   BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
 import Nav from './components/Nav';
+import Utbildning from './pages/Utbildning';
+import Arbetslivserfarenhet from './pages/Arbetslivserfarenhet';
+
+
 
 function App() {
   return (
@@ -17,10 +20,11 @@ function App() {
       <Wrapper>
       <BrowserRouter>
       <Nav /> 
+      
       <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/puns" element={<Puns />} />
-      <Route path="/puns/:id" element={<Pun />} />
+      <Route path="/utbildning" element={<Utbildning />} />
+      <Route path="/arbetslivserfarenhet" element={<Arbetslivserfarenhet />} />
       </Routes>
       </BrowserRouter>
       </Wrapper>
@@ -30,8 +34,6 @@ function App() {
 }
 
 const Wrapper = styled.div`
-background-color: papayaWhip;
-height: 100vh;
 padding: 4em;
 box-sizing: border-box;
 `
